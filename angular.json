@@ -4,7 +4,6 @@
   "projects": {
     "api": "apps/api",
     "api-interfaces": "libs/api-interfaces",
-    "reactive-angular": "apps/reactive-angular",
-    "reactive-angular-e2e": "apps/reactive-angular-e2e"
+    "reactive-angular": "apps/reactive-angular"
   }
 }

@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Message } from '@reactive-angular/api-interfaces';
+import { Component } from '@angular/core';
+import { Person } from '@reactive-angular/api-interfaces';
 
 @Component({
   selector: 'reactive-angular-root',
@@ -8,6 +8,11 @@ import { Message } from '@reactive-angular/api-interfaces';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
+  public readonly people$ = this.getPeople();
+
   constructor(private http: HttpClient) {}
+
+  private getPeople() {
+    return this.http.get<Array<Person>>('/api/people');
+  }
 }

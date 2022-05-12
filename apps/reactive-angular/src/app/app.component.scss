@@ -1,0 +1,64 @@
+$brand-color: #d12422;
+
+:host {
+  display: block;
+  text-align: center;
+}
+
+table {
+  width: 90vw;
+  min-width: 400px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: 24px;
+  margin: 32px auto;
+  font-family: sans-serif;
+  box-shadow: 0 0 32px rgba(0, 0, 0, 0.15);
+
+  thead tr {
+    background-color: $brand-color;
+    color: white;
+    text-align: left;
+  }
+
+  th,
+  td {
+    padding: 12px 24px;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid #eee;
+  }
+
+  tbody tr:nth-of-type(even) {
+    background-color: #eee;
+  }
+
+  tbody tr:last-of-type {
+    border-bottom: 4px solid $brand-color;
+  }
+
+  tbody tr:hover {
+    font-weight: bold;
+    color: $brand-color;
+    background-color: #ddd;
+  }
+}
+
+input {
+  border: 2px solid $brand-color;
+  border-radius: 4px;
+  margin: 16px;
+  padding: 8px;
+  font-size: 24px;
+}
+
+button {
+  background-color: $brand-color;
+  color: white;
+  font-size: 24px;
+  border: 0;
+  border-radius: 4px;
+  margin: 16px;
+  min-height: 48px;
+}

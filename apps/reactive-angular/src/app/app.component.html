@@ -1,9 +1,19 @@
-<div style="text-align: center">
-  <h1>Welcome to reactive-angular!</h1>
-  <img
-    width="450"
-    src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"
-    alt="Nx - Smart, Fast and Extensible Build System"
-  />
-</div>
-<div>Message: {{ hello$ | async | json }}</div>
+<input />
+
+<button>Refresh</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date of birth</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let person of people$ | async">
+      <td>{{ person.name }}</td>
+      <td>{{ person.dateOfBirth | date }}</td>
+    </tr>
+  </tbody>
+</table>
