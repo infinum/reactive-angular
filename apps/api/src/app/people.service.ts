@@ -5,43 +5,52 @@ import { Person } from '@reactive-angular/api-interfaces';
 export class PeopleService {
   private people: Array<Person> = [
     {
-      id: '1',
       name: 'Steve',
       dateOfBirth: '1980-02-14',
     },
     {
-      id: '2',
+      name: 'Stephen',
+      dateOfBirth: '1980-02-16',
+    },
+    {
+      name: 'Stan',
+      dateOfBirth: '1980-02-16',
+    },
+    {
       name: 'John',
       dateOfBirth: '1981-11-24',
     },
     {
-      id: '3',
       name: 'Jane',
       dateOfBirth: '1982-01-02',
     },
     {
-      id: '4',
       name: 'Bob',
       dateOfBirth: '1983-06-06',
     },
     {
-      id: '5',
       name: 'Mary',
       dateOfBirth: '1984-05-15',
     },
     {
-      id: '6',
       name: 'Tom',
       dateOfBirth: '1985-08-20',
     },
   ];
 
   getPeople(name?: string): Array<Person> {
+    const people = [...this.people];
+
+    people.push({
+      name: 'α',
+      dateOfBirth: `${Math.round(2000 + Math.random() * 20)}-01-01`,
+    });
+
     if (!name) {
-      return this.people;
+      return people;
     }
 
-    return this.people.filter((person) => {
+    return people.filter((person) => {
       return person.name.toLocaleLowerCase().includes(name.toLocaleLowerCase());
     });
   }
