@@ -3,9 +3,11 @@ import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Person } from '@reactive-angular/api-interfaces';
 import {
+  catchError,
   combineLatest,
   debounceTime,
   distinctUntilChanged,
+  of,
   startWith,
   Subject,
   switchMap,
@@ -31,7 +33,11 @@ export class AppComponent {
   ]).pipe(
     switchMap(([name]) => {
       // replace swithcMap with mergeMap to see bugs
-      return this.getPeople(name);
+      return this.getPeople(name).pipe(
+        catchError(() => {
+          return of([]);
+        })
+      );
     })
   );
 
