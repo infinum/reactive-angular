@@ -18,12 +18,12 @@ table {
   thead tr {
     background-color: $brand-color;
     color: white;
-    text-align: left;
   }
 
   th,
   td {
     padding: 12px 24px;
+    text-align: left;
   }
 
   tbody tr {
@@ -54,6 +54,7 @@ input {
 }
 
 button {
+  cursor: pointer;
   background-color: $brand-color;
   color: white;
   font-size: 24px;
